@@ -1,0 +1,15 @@
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+h1.nav {
+    font-size: 125%;
+}
+
+h2.pagetitle {
+    text-align: center;
+}
