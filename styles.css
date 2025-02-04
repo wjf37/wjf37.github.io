@@ -30,6 +30,12 @@ nav {
     text-align: center;
 }
 
+#Contact{
+    padding:0% 0% 0.5%;
+    background-color: #505050;
+    color:#eee;
+}
+
 #toTop{
     display: none;
     position: fixed;

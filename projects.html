@@ -15,18 +15,50 @@
 </head>
 
 <body>
-    <header>
-        <h1>Vincent's Portfolio</h1>
-    </header>
-    <nav>
-        <h1> | <a href="/index.html">Home</a> | <a href="/projects.html">Projects</a> | <a
-                href="/about.html">About</a> | </h1>
-    </nav>
-    <h1 class="pagetitle">All Projects</h2>
-
-    <div class = Project>
+    <button onclick="toTop()" id = "toTop" title="Go to Top">Top</button>
+	<nav>
+		<h1><a class="navButton" href="/index.html">Home</a><a class="navButton" href="/projects.html">Projects</a><a class="navButton" href="/about.html">About</a><a class="navButton" href="
+			#Contact">Contact</a></h1>
+	</nav>
+	<div style="text-align:left;padding:5% 5% 500px;font-size:125%;padding-top:3%">
+		<h1>Projects</h1>
+		<p></p>
+	</div>
+    <div>
 
     </div>
+	<div id = "Contact">
+		<h2 style="padding-left:5%;padding-top:3%">Contact</p>
+		<p style="padding-bottom:0.5%;padding-top:0.5%;font-size:80%;">
+			Email: <a href="mailto:vincentw3007:gmail.com" style="text-decoration: none; color:skyblue">vincentw3007@gmail.com</a>
+		</p>
+		<div>
+			<a href="https://github.com/wjf37">
+				<img src="images/github-brands-solid.svg" alt="GitHub Logo">
+			</a>
+			<a href="https://www.linkedin.com/in/vincent-wong-7aa367320/">
+				<img src="images/linkedin-brands-solid.svg" alt="LinkedIn Logo">
+			</a>
+		</div>
+	</div>
+
+	<script>
+		let topButton = document.getElementById("toTop");
+		window.onscroll = function() {scroll()};
+
+		function scroll(){
+			if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000){
+				topButton.style.display = "block";
+			} else{
+				topButton.style.display = "none";
+			}
+		}
+
+		function toTop(){
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
 </body>
 
 </html>
