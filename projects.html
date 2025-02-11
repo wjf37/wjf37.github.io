@@ -20,13 +20,38 @@
 		<h1><a class="navButton" href="/index.html">Home</a><a class="navButton" href="/projects.html">Projects</a><a class="navButton" href="/about.html">About</a><a class="navButton" href="
 			#Contact">Contact</a></h1>
 	</nav>
-	<div style="text-align:left;padding:5% 5% 500px;font-size:125%;padding-top:3%">
-		<h1>Projects</h1>
-		<p></p>
+	<div class="content">
+		<div style="font-size:125%;padding-top:3%;padding-bottom:5%;padding-left:10%;padding-right:10%;line-height:1.5;">
+			<h1 style="padding-bottom: 5%;">Projects</h1>
+			<div class = "container">
+				<div class = "gridItem">
+					<a href="projects/project-1.html" alt="Game Jam 1 Details Link">
+						<img src ="images/RedCycleThumb.png" alt = "Game Jam #1 Thumbnail">
+						<div class = "content">
+							<h3>Game Jam #1</h3>
+						</div>
+					</a>
+				</div>
+				<div class = "gridItem">
+					<a href="projects.project-2.html" alt="Game Jam 2 Details Link">
+						<img src = "images/redo5000bcThumb.png" alt = "Game Jam #2 Thumbnail">
+						<div class = "content">
+							<h3>Game Jam #2</h3>
+						</div>
+					</a>
+				</div>
+				<div class = "gridItem">
+					<a href="projects/project-3.html" alt="Website Details Link">
+						<img alt = "Website Thumbnail">
+						<div class = "content">
+							<h3>Website</h3>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
-    <div>
-
-    </div>
+	<div style="padding-bottom:600px"></div>
 	<div id = "Contact">
 		<div class = "content">
 			<h2 style="padding-top:3%">Contact</h2>
@@ -47,23 +72,8 @@
 		</div>
 	</div>
 
-	<script>
-		let topButton = document.getElementById("toTop");
-		window.onscroll = function() {scroll()};
-
-		function scroll(){
-			if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000){
-				topButton.style.display = "block";
-			} else{
-				topButton.style.display = "none";
-			}
-		}
-
-		function toTop(){
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
-	</script>
+	<script src="ToTop.js"></script>
+	<script src="ProjectFilter.js"></script>
 </body>
 
 </html>
