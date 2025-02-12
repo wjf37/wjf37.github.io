@@ -1,3 +1,4 @@
+/*
 document.querySelectorAll(".filterButton").forEach(button => {
     button.addEventListener("click", () => {
         const filterVal = button.getAttribute("data-filter");
@@ -13,4 +14,20 @@ document.querySelectorAll(".filterButton").forEach(button => {
             }
         })
     })
-})
+})*/
+
+let includeFilters = [];
+let excludeFilters = [];
+
+function applyFilters() {
+    const gridItems = document.querySelectorAll(".gridItem");
+
+    gridItems.forEach(item => {
+        const cats = item.getAttribute("data-categories").split(",").map(cat => cat.trim());
+
+        let showItem = true;
+
+
+    })
+}
+
