@@ -1,25 +1,37 @@
-/*
-document.querySelectorAll(".filterButton").forEach(button => {
-    button.addEventListener("click", () => {
-        const filterVal = button.getAttribute("data-filter");
+const filterButtons = document.querySelectorAll(".filterButton")
 
-        document.querySelectorAll(".gridItem").forEach(item => {
-            if (filterVal === "all" || item.getAttribute("data-category") === filterVal) {
-                item.style.display = "block";
-
-                setTimeout(() => item.style.opacity = 1, 10);
-            } else {
-                item.style.display = "none";
-                setTimeout(() => item.style.display = "none", 300);
-            }
-        })
+filterButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        if (!this.classList.contains("include") && !this.classList.contains("exclude")) {
+            this.classList.add("include");
+        } 
+        
+        else if (this.classList.contains("include")) {
+            this.classList.remove("include");
+            this.classList.add("exclude");
+        } 
+        
+        else if (this.classList.contains("exclude")) {
+            this.classList.remove("exclude");
+        }
+        applyFilters();
     })
-})*/
 
-let includeFilters = [];
-let excludeFilters = [];
+})
 
 function applyFilters() {
+    const includeFilters = [];
+    const excludeFilters = [];
+
+    filterButtons.forEach(button => {
+        if (button.classList.contains("include")) {
+            includeFilters.push(button.getAttribute("data-filter"));
+        }
+        if (button.classList.contains("exclude")) {
+            excludeFilters.push(button.getAttribute("data-filter"));
+        }
+    })
+
     const gridItems = document.querySelectorAll(".gridItem");
 
     gridItems.forEach(item => {
@@ -27,7 +39,17 @@ function applyFilters() {
 
         let showItem = true;
 
+        if (includeFilters.length > 0) {
+            showItem = includeFilters.some(filter => cats.includes(filter))
+        }
 
+        if (excludeFilters.length >0) {
+            if(excludeFilters.some(filter => cats.includes(filter))) {
+                showItem = false;
+            }
+        }
+
+        item.style.display = showItem ? "block" : "none";
     })
 }
 
