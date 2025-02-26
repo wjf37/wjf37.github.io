@@ -6,19 +6,21 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
 		rel="stylesheet">
-
 	<link rel="stylesheet" href="styles.css">
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>About</title>
+
+	<script type="module">
+		import { insertNavbar, insertContact } from '/repeatComponents.js';
+		insertNavbar();
+		insertContact();
+	</script>
 </head>
 
 <body>
-	<nav>
-		<h1><a class="navButton" href="/index.html">Home</a><a class="navButton" href="/projects.html">Projects</a><a class="navButton" href="/about.html">About</a><a class="navButton" href="
-			#Contact">Contact</a></h1>
-		</nav>
+	<div id="navbar"></div>
 	<div class = "content">
 		<div class="writeUp">
 			<h1>About</h1>
@@ -35,25 +37,7 @@
 		</div>
 	</div>
 
-	<div id = "Contact">
-		<div class = "contentStatic">
-			<h2 style="padding-top:3%">Contact</h2>
-			<h3 style="padding-bottom:0.5%;padding-top:0.5%;font-size:120%;">
-				Email: <a href="mailto:vincentw3007:gmail.com" style="text-decoration: none; color:skyblue">vincentw3007@gmail.com</a>
-			</h3>
-			<div>
-				<a class = "icons" href="https://github.com/wjf37">
-					<img src="images/github-brands-solid.svg" alt="GitHub Logo">
-				</a>
-				<a class = "icons" href="https://www.linkedin.com/in/vincent-wong-7aa367320/">
-					<img src="images/linkedin-brands-solid.svg" alt="LinkedIn Logo">
-				</a>
-				<a class = "icons" href="https://wjf37.itch.io/">
-					<img src="images/itch-io-brands-solid.svg" alt="itch.io logo">
-				</a>
-			</div>
-		</div>
-	</div>
+	<div id = "Contact"></div>
 </body>
 
 </html>

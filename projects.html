@@ -11,15 +11,19 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="module">
+		import { insertNavbar, insertContact } from '/repeatComponents.js';
+		insertNavbar();
+		insertContact();
+	</script>
+
     <title>Projects</title>
 </head>
 
 <body>
     <button onclick="toTop()" id = "toTop" title="Go to Top">Top</button>
-	<nav>
-		<h1><a class="navButton" href="/index.html">Home</a><a class="navButton" href="/projects.html">Projects</a><a class="navButton" href="/about.html">About</a><a class="navButton" href="
-			#Contact">Contact</a></h1>
-	</nav>
+	<div id="navbar"></div>
 	<div class="content">
 		<div style="font-size:125%;padding-top:3%;padding-bottom:5%;padding-left:10%;padding-right:10%;line-height:1.5;">
 			<h1>Projects</h1>
@@ -42,7 +46,7 @@
 					<div class = "gridItem" data-categories="games, cSharp, unity">
 						<img src = "images/redo5000bcThumb.webp" alt = "Game Jam #2 Thumbnail">
 						<div class = "content">
-							<h3>Game Jam #2</h3>
+							<h3>Game Jam #2 - Return to 5000BC</h3>
 						</div>
 					</div>
 				</a>
@@ -50,7 +54,7 @@
 					<div class = "gridItem" data-categories="games, cSharp, unity">
 						<img src ="images/RedCycleThumb.webp" alt = "Game Jam #1 Thumbnail">
 						<div class = "content">
-							<h3>Game Jam #1</h3>
+							<h3>Game Jam #1 - Redemption Cycle</h3>
 						</div>
 					</div>
 				</a>
@@ -58,25 +62,7 @@
 		</div>
 	</div>
 	<div style="padding-bottom:300px"></div>
-	<div id = "Contact">
-		<div class = "contentStatic">
-			<h2 style="padding-top:3%">Contact</h2>
-			<h3 style="padding-bottom:0.5%;padding-top:0.5%;font-size:120%;">
-				Email: <a href="mailto:vincentw3007:gmail.com" style="text-decoration: none; color:skyblue">vincentw3007@gmail.com</a>
-			</h3>
-			<div>
-				<a class = "icons" href="https://github.com/wjf37">
-					<img src="images/github-brands-solid.svg" alt="GitHub Logo">
-				</a>
-				<a class = "icons" href="https://www.linkedin.com/in/vincent-wong-7aa367320/">
-					<img src="images/linkedin-brands-solid.svg" alt="LinkedIn Logo">
-				</a>
-                <a class = "icons" href="https://wjf37.itch.io/">
-					<img src="images/itch-io-brands-solid.svg" alt="itch.io logo">
-				</a>
-			</div>
-		</div>
-	</div>
+	<div id = "Contact"></div>
 
 	<script src="ToTop.js"></script>
 	<script src="ProjectFilter.js"></script>

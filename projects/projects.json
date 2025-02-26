@@ -1,0 +1,17 @@
+{
+    "gameJam1":
+        {"title":"Game Jam #1 - Redemption Cycle",
+        "description":"Made in the Unity game engine and programmed with C#, developed in 4 days.",
+        "image":"/images/RedCycleThumb.webp"}
+    ,
+    "gameJam2":
+        {"title":"Game Jam #2 - Redo 5000BC",
+        "description":"Made in the Unity game engine and programmed with C#, developed in 2 days.",
+        "image":"/images/redo5000bcThumb.webp"}
+    ,
+    "portfolioWebsite":
+        {"title":"Portfolio Website",
+        "description":"Developed with HTML CSS and JavaScript, hosted on GitHub Pages.",
+        "image":"/images/websiteThumb.webp"}
+        
+}
