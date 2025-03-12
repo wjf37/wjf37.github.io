@@ -1,9 +1,12 @@
-const navbar = `<nav>
+export function insertNavbar() {
+    document.getElementById("navbar").innerHTML = `<nav>
 		<h1><a class="navButton" href="/index.html">Home</a><a class="navButton" href="/projects.html">Projects</a><a class="navButton" href="/about.html">About</a><a class="navButton" href="
 			#Contact">Contact</a></h1>
 	</nav>`;
+}
 
-const contact = `<div class = "contentStatic">
+export function insertContact() {
+	document.getElementById("Contact").innerHTML = `<div class = "contentStatic">
 			<h2 style="padding-top:3%">Contact</h2>
 			<h3 style="padding-bottom:0.5%;padding-top:0.5%;font-size:120%;">
 				Email: <a href="mailto:vincentw3007:gmail.com" style="text-decoration: none; color:skyblue">vincentw3007@gmail.com</a>
@@ -20,9 +23,48 @@ const contact = `<div class = "contentStatic">
 				</a>
 			</div>
 		</div>`;
-export function insertNavbar() {
-    document.getElementById("navbar").innerHTML = navbar;
 }
-export function insertContact() {
-	document.getElementById("Contact").innerHTML = contact;
+
+//load projects from projects.json. pass featured param
+export async function loadProjects(featured) {
+	try {
+		const response = await fetch("/projects/projects.json");
+		if (!response.ok) {
+			throw new Error(response.status);
+		}
+
+		const container = document.querySelector(".container");
+		if (!container) {
+			console.error("Container element not found.");
+			return;
+		}
+
+		let data = await response.json();
+		let htmlContent = "";
+
+		data.forEach(project => {
+			if (!featured || (featured && project.featured)) {
+				htmlContent += `
+				<a href="${project.link}" alt="${project.linkAlt}">
+					<div class = "gridItem" data-categories = "${project.categories}">
+						<div class = "image">
+							<img src = "${project.image}" alt = "${project.imgAlt}">
+							<div class = "overlay">
+								<p>${project.description}</p>
+							</div>
+						</div>
+						
+						<div class = "content">
+							<h3>${project.title}</h3>
+						</div>
+					</div>
+				</a>`;
+			}
+		})
+		container.innerHTML += htmlContent;
+	}
+
+	catch (error) {
+		console.error("Error fetching projects: ", error);
+	}
 }

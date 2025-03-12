@@ -13,9 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<script type="module">
-		import { insertNavbar, insertContact } from '/repeatComponents.js';
+		import { insertNavbar, insertContact, loadProjects } from "/repeatComponents.js";
 		insertNavbar();
 		insertContact();
+		loadProjects();
 	</script>
 
     <title>Projects</title>
@@ -25,7 +26,7 @@
     <button onclick="toTop()" id = "toTop" title="Go to Top">Top</button>
 	<div id="navbar"></div>
 	<div class="content">
-		<div style="font-size:125%;padding-top:3%;padding-bottom:5%;padding-left:10%;padding-right:10%;line-height:1.5;">
+		<div style="padding-top:3%;padding-left:10%;padding-right:10%;">
 			<h1>Projects</h1>
 			<div class="filters">
 				<button class="filterButton" data-filter="games">Games</button>
@@ -33,31 +34,6 @@
 				<button class="filterButton" data-filter="web">Web</button>
 			</div>
 			<div class = "container">
-				<a href="projects/project-3.html" alt="Portfolio Website Details Link">
-					<div class = "gridItem" data-categories="html, css, javascript, web, frontend">
-						<img src = "images/websiteThumb.webp" alt = "Website Thumbnail">
-						<div class = "content">
-							<h3>Portfolio Website</h3>
-						</div>
-					</div>
-				</a>
-
-				<a href="projects/project-2.html" alt="Game Jam 2 Details Link">
-					<div class = "gridItem" data-categories="games, cSharp, unity">
-						<img src = "images/redo5000bcThumb.webp" alt = "Game Jam #2 Thumbnail">
-						<div class = "content">
-							<h3>Game Jam #2 - Return to 5000BC</h3>
-						</div>
-					</div>
-				</a>
-				<a href="projects/project-1.html" alt="Game Jam 1 Details Link">
-					<div class = "gridItem" data-categories="games, cSharp, unity">
-						<img src ="images/RedCycleThumb.webp" alt = "Game Jam #1 Thumbnail">
-						<div class = "content">
-							<h3>Game Jam #1 - Redemption Cycle</h3>
-						</div>
-					</div>
-				</a>
 			</div>
 		</div>
 	</div>
